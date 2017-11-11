@@ -1,6 +1,8 @@
 # rewriting-history
 \* running this script does *not* change your commit history in other repos.  It only adds commits in the repo you create.
 
+![](https://github.com/vipyne/rewriting-history/blob/master/z_contributionScreenshots/iheartvr.png)
+
 ### Usage:
 
 ```
