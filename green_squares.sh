@@ -21,8 +21,8 @@ curl -i -X POST -u "$USERNAME" -d "$DATA_OPTS" https://api.github.com/user/repos
 
 # scrape the date of last green square
 ayearago=$(curl https://github.com/vipyne |grep -m1 data-date= |sed -e 's/^.*date="//p')
-echo "ayearago"
-echo ayearago
+
+mkdir ../"$REPONAME" && cd ../"$REPONAME"
 
 rm -rf unixtime
 rm -rf .git
@@ -80,14 +80,22 @@ UNIXTIMEAYEARAGO=$(date -j -f "%b %d %Y %T" "${monthstr} ${day} ${year} 12:00:00
 # #UNIXTIMERIGHTNOW=$(date -j -f "%a %b %d %T %Z %Y" "`date`" "+%s")
 # #                   $ date -j -f "%b %d %Y %T" "Apr 05 2016 00:00:00" "+%s"
 UNIXTIME=$UNIXTIMEAYEARAGO
+echo $UNIXTIMEAYEARAGO
 
 mkdir unixtime
 cd unixtime || exit
 
+touch something
+
 for i in $(seq 1 ${#STRING}); do
   INNERLOOP="${STRING:i-1:1}"
   for j in $( seq 1 $(("$INNERLOOP" * 4)) ); do
-    touch "$i-$j-unixtime"
+    # # github is *not* liking how many files this produces:
+    touch "$i-$j-unixtime" # sorry github
+    # # so...
+    # # I feel like I tried this and it didn't work before.
+    # echo "$i-$j" >> something
+    # # yup, doesn't work
     git add .
     git commit -m "commit number $i : $j"
     COMMITTIME=$(("$UNIXTIME" + "$j" * 10))
