@@ -103,7 +103,7 @@ git remote add origin git@github.com:vipyne/"$REPONAME".git
 git push -u origin master
 
 wait
-open "https://github.com/"$USERNAME"
+open "https://github.com/$USERNAME"
 echo 'done'
 
 
