@@ -1,18 +1,19 @@
-# rewriting-history
-\* running this script does *not* change your commit history in other repos.  It only adds commits in the repo you create.
+# github-graffiti
+\* Running this script does *not* change your commit history in your existing repos.  It only adds commits in the repo you create.
 
-![](https://github.com/vipyne/rewriting-history/blob/master/z_contributionScreenshots/iheartvr.png)
 
 ### Usage:
 
 ```
 $ git clone https://github.com/vipyne/rewriting-history.git
 ```
-- customize your github username and repo name in `green_squares.sh` (replace `vipyne` and `rewriting-history` respectively.)
-- customize `STRING` in `green_squares.sh`(optional.  more string "picture" choices to come in the future.)
+Customize `STRING` in `green_squares.sh`  (optional.  look [here](https://github.com/vipyne/rewriting-history/blob/master/z_cleanUpThis/heart-string) for more string "picture" choices (and more to come in the future.))
 
 ```
-$ ./green_squares.sh
+$ ./green_squares.sh github_username new_repo_name
 ```
-- be patient. the script is writing a years' worth of commits. it also takes github a little time to clear its cache.
-- now your contribution calendar should look something like this:
+> Please be patient (: The script is writing a year's worth of commits. It also takes github a little time to clear its cache.  If your profile page doesn't look different at first, give it a minute, then refresh.
+Now your contribution calendar could look something like this:
+![](https://github.com/vipyne/rewriting-history/blob/master/z_contributionScreenshots/iheartvr.png)
+or this:
+![](https://github.com/vipyne/rewriting-history/blob/master/z_contributionScreenshots/heartLS.png)
